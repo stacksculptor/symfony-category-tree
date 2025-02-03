@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: white;
+}
+
+.collapsed > span::before {
+  content: "+";
+  margin-right: 5px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+  
+.expanded > span::before {
+  content: "-";
+  margin-right: 5px; 
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+  
+span {
+  cursor: pointer;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+}
+span:hover {
+  color: #1D4ED8; 
+}
+  
+ul {
+  padding-left: 1rem; 
+}
+  
+li {
+  margin-bottom: 0.5rem; 
+}

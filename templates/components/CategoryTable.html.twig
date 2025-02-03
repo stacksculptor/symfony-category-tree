@@ -1,0 +1,25 @@
+<li data-controller="category">
+    <div class="flex items-center">
+        <span
+            class="mr-2 text-xl"
+            data-category-target="expand"
+            data-action="click->category#toggle"
+        >
+        </span>
+        <span 
+            class="px-2 rounded-xl"
+            data-action="click->category#select"
+            data-category-id="{{ child.id }}"
+            data-category-name="{{ child.name }}"
+        >
+            {{ child.name }}
+        </span>
+    </div>
+    {% if child.children|length > 0 %}
+        <ul class="pl-4 hidden" data-category-target="childList">
+            {% for subChild in child.children %}
+                <twig:CategoryTable child="{{ subChild }}" />
+            {% endfor %}
+        </ul>
+    {% endif %}
+</li>
