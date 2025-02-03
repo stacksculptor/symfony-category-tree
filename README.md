@@ -9,17 +9,19 @@ Before getting started, you will need:
 
 `composer install`
 
-`symfony serve`
-
 `bin/console tailwind:build -w`
+
+`bin/console doctrine:database:create`
 
 `bin/console doctrine:migrations:migrate`
 
-`bin/console populate:db:from:contentful`
+`php bin/console doctrine:fixtures:load`
 
-`bin/console importmap:install`
+`symfony server:start`
 
-`/change-locale/en`
-`/change-locale/nl`
 
-`bin/console tailwind:build -w`
+## Test
+
+`php bin/console make:test`
+`vendor/bin/bdi detect drivers`
+`php bin/phpunit`
